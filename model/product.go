@@ -31,7 +31,7 @@ func GetProductName(id string) string {
 	return name
 }
 
-func GetProduct(id string) Product {
+func GetProductById(id string) Product {
 	logger.AppLogger.Info().Println("Function hit : GetProduct")
 	db := connector.DbConn()
 	selDB, err := db.Query("SELECT * FROM products WHERE id = ?", id)

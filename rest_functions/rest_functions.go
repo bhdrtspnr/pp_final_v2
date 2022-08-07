@@ -2,11 +2,16 @@ package rest_functions
 
 import (
 	"encoding/json"
+	"final_project/config"
 	logger "final_project/logger"
 	model "final_project/model"
 	connector "final_project/mysql"
+	"fmt"
 	"net/http"
+	"strconv"
 	"time"
+
+	discount "final_project/discount"
 
 	"github.com/gorilla/mux"
 )
@@ -14,7 +19,104 @@ import (
 var STATUS_NOT_ALLOWED int = 405
 var STATUS_NOT_FOUND int = 404
 
+func CompleteCart(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("Endpoint hit: complete cart \n")
+	logger.AppLogger.Info().Println("Endpoint Hit: CompleteCart")
+	db := connector.DbConn()
+	if r.Method != "POST" {
+		logger.AppLogger.Error().Printf("Method %s is not allowed at endpoint complete cart.", r.Method)
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	params := mux.Vars(r) //get the params from the url
+	cartId := params["cart_id"]
+	if !model.IsCartExists(cartId) {
+		logger.AppLogger.Error().Printf("Cart: %s not found\n", cartId)
+		http.Error(w, "Cart not found with id ", http.StatusNotFound)
+		return
+	}
+
+	if model.IsCartCompleted(cartId) {
+		logger.AppLogger.Error().Printf("Cart: %s is already completed\n", cartId)
+		http.Error(w, "Cart is already completed", http.StatusBadRequest)
+		return
+	}
+
+	discountAmount := 0.0
+	consecutivePurchaseDiscount := discount.CalculateConsecutivePurchaseDiscount(cartId)
+	givenAmountDiscount := discount.CalculateGivenAmountDiscount(cartId)
+	ThreeSubsequentPurchaseDiscount := discount.CalculateThreeSubsequentPurchaseDiscount(cartId)
+	logger.AppLogger.Info().Printf("Comparing the discounts: consecutive purchase discount: %f, given amount discount: %f, three subsequent purchase discount: %f \n", consecutivePurchaseDiscount, givenAmountDiscount, ThreeSubsequentPurchaseDiscount)
+	if consecutivePurchaseDiscount > givenAmountDiscount && consecutivePurchaseDiscount > ThreeSubsequentPurchaseDiscount {
+		logger.AppLogger.Info().Printf("Using consecutive purchase discount of: %f\n", consecutivePurchaseDiscount)
+		discountAmount = consecutivePurchaseDiscount
+	} else if givenAmountDiscount > consecutivePurchaseDiscount && givenAmountDiscount > ThreeSubsequentPurchaseDiscount {
+		logger.AppLogger.Info().Printf("Using given amount discount of: %f\n", givenAmountDiscount)
+		discountAmount = givenAmountDiscount
+	} else if ThreeSubsequentPurchaseDiscount > consecutivePurchaseDiscount && ThreeSubsequentPurchaseDiscount > givenAmountDiscount {
+		logger.AppLogger.Info().Printf("Using three subsequent purchase discount of: %f\n", ThreeSubsequentPurchaseDiscount)
+		discountAmount = ThreeSubsequentPurchaseDiscount
+	}
+	logger.AppLogger.Info().Printf("Discount: %f \n", discountAmount)
+	totalPrice := model.GetCart(cartId).TotalPrice - discountAmount
+	logger.AppLogger.Info().Printf("Cart: %s total price: %f \n", cartId, totalPrice)
+	if totalPrice < 0 {
+		totalPrice = 0
+	}
+	logger.AppLogger.Info().Printf("Cart: %s total price: %f \n", cartId, totalPrice)
+	//update cart status to completed
+	if model.GetCustomer(model.GetCartOwnerId(model.GetCart(cartId))).Balance < totalPrice {
+		logger.AppLogger.Error().Printf("Customer: %d does not have enough balance to complete the cart: %s \n", model.GetCartOwnerId(model.GetCart(cartId)), cartId)
+		http.Error(w, "Customer does not have enough balance to complete the cart", http.StatusNotFound)
+		return
+	}
+
+	completeForm, err := db.Prepare("UPDATE carts SET is_purchased=1, total_price=? WHERE id=?")
+	if err != nil {
+		logger.AppLogger.Fatal().Printf("Error preparing database for changing cart to order: %v \n", err)
+		panic(err.Error())
+	}
+	//update cart discount
+	appDiscount, err := db.Prepare("UPDATE carts SET discount=? WHERE id=?")
+	if err != nil {
+		logger.AppLogger.Fatal().Printf("Error preparing database for discount: %v \n", err)
+		panic(err.Error())
+	}
+	//update cart purchase date
+	addCurDate, err := db.Prepare("UPDATE carts SET date_purchased=? WHERE id=?")
+	if err != nil {
+		logger.AppLogger.Fatal().Printf("Error preparing database for adding date for adding current date: %v \n", err)
+		panic(err.Error())
+	}
+	//update customer balance
+	upCustBalance, err := db.Prepare("UPDATE customers SET balance=balance-? WHERE id=?")
+	if err != nil {
+		logger.AppLogger.Fatal().Printf("Error preparing database for updating customer balance: %v \n", err)
+		panic(err.Error())
+	}
+	//update customer discount date if amount is greater tha the given amount
+	if totalPrice > config.ConfigInstance.GivenAmount {
+		upCustDate, err := db.Prepare("UPDATE customers SET HAS_SUBSEQUENT_DISCOUNT_UNTIL=? WHERE id=?")
+		if err != nil {
+			logger.AppLogger.Fatal().Printf("Error preparing database for updating customer balance: %v \n", err)
+			panic(err.Error())
+		}
+		upCustDate.Exec(time.Now().Add(time.Hour*24*30), model.GetCartOwnerId(model.GetCart(cartId)))
+	}
+
+	upCustBalance.Exec(totalPrice, model.GetCartOwnerId(model.GetCart(cartId)))
+	addCurDate.Exec(time.Now(), cartId)
+	appDiscount.Exec(discountAmount, cartId)
+	completeForm.Exec(totalPrice, cartId)
+	logger.AppLogger.Info().Printf("Cartid: %s, total price: %f, discount: %f succesfully completed.\n", cartId, totalPrice, discountAmount)
+	w.Write([]byte("Cart id: " + cartId + " completed."))
+	w.Write([]byte("Total price: " + strconv.FormatFloat(totalPrice, 'f', 2, 64) + "Owner id: " + strconv.Itoa(model.GetCartOwnerId(model.GetCart(cartId)))))
+	defer db.Close()
+
+}
+
 func DeleteCartItem(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: DeleteCartItem")
 	db := connector.DbConn()
 	if r.Method != "DELETE" {
 		http.Error(w, http.StatusText(STATUS_NOT_ALLOWED), http.StatusMethodNotAllowed)
@@ -59,6 +161,7 @@ func DeleteCartItem(w http.ResponseWriter, r *http.Request) {
 }
 
 func ShowCart(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: ShowCart")
 	logger.AppLogger.Info().Println("Endpoint hit : ShowCart")
 	db := connector.DbConn()
 	params := mux.Vars(r) //get the params from the url
@@ -129,6 +232,7 @@ func ShowCart(w http.ResponseWriter, r *http.Request) {
 }
 
 func AddToCart(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: AddToCart")
 	db := connector.DbConn()
 	if r.Method != "POST" {
 		logger.AppLogger.Error().Println("Method not allowed")
@@ -164,6 +268,7 @@ func AddToCart(w http.ResponseWriter, r *http.Request) {
 }
 
 func ListCustomers(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: ListCustomers")
 	logger.AppLogger.Info().Println("Endpoint hit : ListCustomers")
 	db := connector.DbConn()
 	selDB, err := db.Query("SELECT * FROM customers")
@@ -199,6 +304,7 @@ func ListCustomers(w http.ResponseWriter, r *http.Request) {
 }
 
 func ListCartItems(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: ListCartItems")
 	logger.AppLogger.Info().Println("Endpoint hit : ListCartItems")
 	db := connector.DbConn()
 	selDB, err := db.Query("SELECT * FROM cart_items")
@@ -231,6 +337,7 @@ func ListCartItems(w http.ResponseWriter, r *http.Request) {
 }
 
 func ListCarts(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: ListCarts")
 	logger.AppLogger.Info().Println("Endpoint hit : ListCarts")
 	db := connector.DbConn()
 	selDB, err := db.Query("SELECT * FROM carts")
@@ -270,6 +377,7 @@ func ListCarts(w http.ResponseWriter, r *http.Request) {
 }
 
 func ListProducts(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Endpoint Hit: ListProducts")
 	logger.AppLogger.Info().Println("Endpoint hit : ListProducts")
 	db := connector.DbConn()
 	selDB, err := db.Query("SELECT * FROM products")

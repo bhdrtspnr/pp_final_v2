@@ -1,0 +1,13 @@
+{
+    "given_amount": 100,
+    "point1_vat_discount": 0,
+    "point8_vat_discount": 0.1,
+    "point18_vat_discount": 0.15,
+    "subsequent_purchase_discount": 0.1,
+    "three_subsequent_purchase_discount": 0.08,
+    "db_name": "app_db",
+    "db_user": "root",
+    "db_password": "123456",
+    "db_type": "mysql",
+    "sql_logs": "false"
+}

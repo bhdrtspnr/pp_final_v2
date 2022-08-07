@@ -15,6 +15,26 @@ type Cart struct {
 	Discount      float64   `json:"discount"`
 }
 
+func IsCartCompleted(id string) bool {
+	logger.AppLogger.Info().Println("Function hit : IsCartPurchased")
+	db := connector.DbConn()
+	selDB, err := db.Query("SELECT is_purchased FROM carts WHERE id = ?", id)
+	if err != nil {
+		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
+		panic(err.Error())
+	}
+	var is_purchased bool
+	for selDB.Next() {
+		err = selDB.Scan(&is_purchased)
+		if err != nil {
+			logger.AppLogger.Fatal().Printf("Error scanning database: %v \n", err)
+			panic(err.Error())
+		}
+	}
+	logger.AppLogger.Info().Printf("Cart id: %s , is purchased: %t \n", id, is_purchased)
+	return is_purchased
+}
+
 func IsProductExistsInCart(cart_id string, product_id string) bool {
 	logger.AppLogger.Info().Println("Function hit : IsProductExistsInCart")
 	db := connector.DbConn()
@@ -30,66 +50,65 @@ func IsProductExistsInCart(cart_id string, product_id string) bool {
 }
 
 func UpdateCartPrice(id string) {
+	//since I made a clear design error and did not hold product prices in the cart items I had to query cart_items to get ids of products and then query products to get prices :(
+	//had to rewrite whole function due to that design error
 	logger.AppLogger.Info().Println("Function hit : UpdateCartPrice")
 	db := connector.DbConn()
 	defer db.Close()
-	selDB, err := db.Query("SELECT total_price FROM carts WHERE id = ?", id)
+
+	curPrice, err := db.Query("SELECT total_price FROM carts WHERE id = ?", id)
 	if err != nil {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
 		panic(err.Error())
 	}
-	var total_price float64
-	for selDB.Next() {
-		err = selDB.Scan(&total_price)
+	var currentTotal float64
+	for curPrice.Next() {
+		err = curPrice.Scan(&currentTotal)
 		if err != nil {
 			logger.AppLogger.Fatal().Printf("Error scanning database: %v \n", err)
 			panic(err.Error())
 		}
 	}
 
-	getItems, err := db.Prepare("SELECT PRODUCT_ID FROM cart_items WHERE CART_ID = ?")
-	if err != nil {
-		logger.AppLogger.Fatal().Printf("Error preparing database: %v \n", err)
-		panic(err.Error())
-	}
-	selDB, err = getItems.Query(id)
+	selDB, err := db.Query("SELECT PRODUCT_ID FROM cart_items WHERE cart_id = ?", id)
 	if err != nil {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
 		panic(err.Error())
 	}
-	var product_id int
+	var product_ids []string
 	for selDB.Next() {
+		var product_id string
 		err = selDB.Scan(&product_id)
 		if err != nil {
 			logger.AppLogger.Fatal().Printf("Error scanning database: %v \n", err)
 			panic(err.Error())
 		}
+		product_ids = append(product_ids, product_id)
 	}
-	getPrice, err := db.Prepare("SELECT sum(PRICE) FROM products WHERE ID = ?")
-	if err != nil {
-		logger.AppLogger.Fatal().Printf("Error preparing database: %v \n", err)
-		panic(err.Error())
-	}
-	selDB, err = getPrice.Query(product_id)
-	if err != nil {
-		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
-		panic(err.Error())
-	}
-	var price float64
-	for selDB.Next() {
-		err = selDB.Scan(&price)
+	var total_price float64
+	for _, product_id := range product_ids {
+		selDB, err := db.Query("SELECT price FROM products WHERE id = ?", product_id)
 		if err != nil {
-			logger.AppLogger.Fatal().Printf("Error scanning database: %v \n", err)
+			logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
 			panic(err.Error())
 		}
+		var price float64
+		for selDB.Next() {
+			err = selDB.Scan(&price)
+			if err != nil {
+				logger.AppLogger.Fatal().Printf("Error scanning database: %v \n", err)
+				panic(err.Error())
+			}
+		}
+		total_price += price
 	}
-	total_price += price
 	_, err = db.Exec("UPDATE carts SET total_price = ? WHERE id = ?", total_price, id)
 	if err != nil {
 		logger.AppLogger.Fatal().Printf("Error updating database: %v \n", err)
 		panic(err.Error())
 	}
-	logger.AppLogger.Info().Printf("Cart id: %s , total price: %f \n", id, total_price)
+	logger.AppLogger.Info().Printf("Cart id: %s price updated!, OLD VAL: %f , NEW_VAL: %f \n", id, currentTotal, total_price)
+
 }
 
 func GetCart(id string) Cart {
@@ -112,7 +131,7 @@ func GetCart(id string) Cart {
 	return cart
 }
 
-func GetCartOwner(cart Cart) int {
+func GetCartOwnerId(cart Cart) int {
 	logger.AppLogger.Info().Println("Function hit : GetCartOwner")
 	db := connector.DbConn()
 	selDB, err := db.Query("SELECT customer_id FROM carts WHERE id = ?", cart.Id)

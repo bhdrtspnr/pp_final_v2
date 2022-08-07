@@ -2557,3 +2557,453 @@ INFO: 2022/08/05 00:20:36 rest_functions.go:207: Parsing cart items...
 INFO: 2022/08/05 00:20:36 rest_functions.go:223: Reading cart item id: 2 , cart id: 1 , product id: 100 , product name: lamp shade 
 INFO: 2022/08/05 00:20:36 rest_functions.go:223: Reading cart item id: 3 , cart id: 1 , product id: 5 , product name: rubber band 
 INFO: 2022/08/05 00:20:36 rest_functions.go:226: Total of 2 cart items found and listed. 
+INFO: 2022/08/05 18:02:20 config.go:22: Function hit : GetConfig
+INFO: 2022/08/05 18:02:20 main.go:14: Main started
+INFO: 2022/08/05 18:03:27 config.go:22: Function hit : GetConfig
+INFO: 2022/08/05 18:03:27 main.go:14: Main started
+FATAL: 2022/08/05 18:03:27 db_connector.go:29: Error creating database: Error 1045: Access denied for user 'root'@'localhost' (using password: NO) 
+INFO: 2022/08/05 18:03:53 config.go:22: Function hit : GetConfig
+INFO: 2022/08/05 18:03:53 main.go:14: Main started
+INFO: 2022/08/05 18:03:53 db_connector.go:32: Database app_db created 
+INFO: 2022/08/05 18:03:53 db_connector.go:37: Connecting to database...
+FATAL: 2022/08/05 18:03:53 db_connector.go:57: Parsing requests...
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012df0} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012e20} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012e60} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012e90} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012ed0} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012f00} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012f40} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012f70} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012fb0} 
+INFO: 2022/08/05 18:03:53 db_connector.go:64: Request executed: {0xc000116240 0xc000012fe0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013020} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013050} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013090} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000130c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013100} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013130} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013170} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000131a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000131e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013210} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013250} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013280} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000132c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000132f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013330} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013360} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000133a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000133d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013410} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013440} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013480} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000134b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000134f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013520} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013560} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013590} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000135d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013600} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013640} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013670} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000136b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000136e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013720} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013750} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013790} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000137c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013800} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013830} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013870} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000138a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000138e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013910} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013950} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013980} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000139c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0000139f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013a30} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013a60} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013aa0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013ad0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013b10} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013b40} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013b80} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013bb0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013bf0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013c20} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013c60} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013c90} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013cd0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013d00} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013d40} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013d70} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013db0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013de0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013e20} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013e50} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013e90} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013ec0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013f00} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013f30} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013f70} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013fa0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000013fe0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208010} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208050} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208080} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002080c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002080f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208130} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208160} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002081a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002081d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208210} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208240} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208280} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002082b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002082f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208320} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208360} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208390} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002083d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208400} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208440} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208470} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002084b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002084e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208520} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208550} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208590} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002085c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208600} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208630} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208670} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002086a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002086e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208710} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208750} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208780} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002087c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002087f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208830} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208860} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002088a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002088d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208910} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208940} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208980} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002089b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002089f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208a20} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208a60} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208a90} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208ad0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208b00} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208b40} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208b70} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208bb0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208be0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208c20} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208c50} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208c90} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208cc0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208d00} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208d30} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208d70} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208da0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208de0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208e10} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208e50} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208e80} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208ec0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208ef0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208f30} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208f60} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208fa0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000208fd0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209010} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209040} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209080} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002090b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002090f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209120} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209160} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209190} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002091d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209200} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209240} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209270} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002092b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002092e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209320} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209350} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209390} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002093c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209400} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209430} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209470} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002094a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002094e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209510} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209550} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209580} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002095c0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002095f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209630} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209660} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002096a0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002096d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209710} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209740} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209780} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002097b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002097f0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209820} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209860} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209890} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002098d0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209900} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209940} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209970} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002099b0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc0002099e0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209a20} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209a50} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209a90} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209ac0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209b00} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209b30} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209b70} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209ba0} 
+INFO: 2022/08/05 18:03:54 db_connector.go:64: Request executed: {0xc000116240 0xc000209be0} 
+ERROR: 2022/08/05 18:03:54 db_connector.go:62: Error executing request: Error 1065: Query was empty 
+INFO: 2022/08/05 18:03:54 main.go:21: Handling requests...
+INFO: 2022/08/05 18:04:01 rest_functions.go:234: Endpoint hit : ListCarts
+INFO: 2022/08/05 18:04:01 db_connector.go:37: Connecting to database...
+INFO: 2022/08/05 18:04:01 rest_functions.go:243: Parsing carts...
+INFO: 2022/08/05 18:04:01 rest_functions.go:265: Marshalling carts...
+INFO: 2022/08/05 18:04:01 rest_functions.go:267: Total of 0 carts found and listed. 
+INFO: 2022/08/05 18:04:03 rest_functions.go:202: Endpoint hit : ListCartItems
+INFO: 2022/08/05 18:04:03 db_connector.go:37: Connecting to database...
+INFO: 2022/08/05 18:04:03 rest_functions.go:210: Parsing cart items...
+INFO: 2022/08/05 18:04:03 rest_functions.go:229: Total of 0 cart items found and listed. 
+INFO: 2022/08/05 18:04:04 rest_functions.go:273: Endpoint hit : ListProducts
+INFO: 2022/08/05 18:04:04 db_connector.go:37: Connecting to database...
+INFO: 2022/08/05 18:04:04 rest_functions.go:282: Parsing products...
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 1 , name: wooden spoon , price: 90 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 2 , name: chain , price: 90 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 3 , name: plush unicorn , price: 6 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 4 , name: beaded necklace , price: 22 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 5 , name: rubber band , price: 62 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 6 , name: fishing hook , price: 91 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 7 , name: cellphone , price: 82 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 8 , name: jar of peanut butter , price: 6 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 9 , name: clock , price: 2 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 10 , name: few batteries , price: 45 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 11 , name: package of glitter , price: 98 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 12 , name: squirrel , price: 82 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 13 , name: shirt button , price: 4 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 14 , name: paper , price: 6 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 15 , name: tube of lip balm , price: 93 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 16 , name: nail filer , price: 21 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 17 , name: mop , price: 2 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 18 , name: sticky note , price: 89 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 19 , name: whistle , price: 21 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 20 , name: basketball , price: 21 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 21 , name: key chain , price: 8 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 22 , name: pocketknife , price: 94 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 23 , name: paint brush , price: 34 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 24 , name: crow , price: 89 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 25 , name: harmonica , price: 97 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 26 , name: sandal , price: 83 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 27 , name: umbrella , price: 96 , vat: 0.01 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 28 , name: bottle of water , price: 11 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 29 , name: card , price: 65 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 30 , name: tube of lipstick , price: 34 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 31 , name: rusty nail , price: 12 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 32 , name: jigsaw puzzle , price: 91 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 33 , name: plastic fork , price: 14 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 34 , name: steak knife , price: 73 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 35 , name: garden spade , price: 49 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 36 , name: children's book , price: 40 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 37 , name: car , price: 27 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 38 , name: face wash , price: 11 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 39 , name: white out , price: 72 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 40 , name: sharpie , price: 96 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 41 , name: mobile phone , price: 59 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 42 , name: bowl , price: 71 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 43 , name: photo album , price: 56 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 44 , name: ladle , price: 38 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 45 , name: toy boat , price: 8 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 46 , name: radio , price: 64 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 47 , name: socks , price: 31 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 48 , name: cup , price: 97 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 49 , name: glow stick , price: 26 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 50 , name: catalogue , price: 1 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 51 , name: needle , price: 98 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 52 , name: stick of incense , price: 26 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 53 , name: egg beater , price: 69 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 54 , name: ice cream stick , price: 61 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 55 , name: boom box , price: 57 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 56 , name: cars , price: 81 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 57 , name: bottle of syrup , price: 5 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 58 , name: toothpick , price: 97 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 59 , name: baseball bat , price: 47 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 60 , name: snowglobe , price: 45 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 61 , name: whale , price: 45 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 62 , name: toothbrush , price: 61 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 63 , name: bangle bracelet , price: 50 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 64 , name: phone , price: 3 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 65 , name: shoe lace , price: 30 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 66 , name: sofa , price: 66 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 67 , name: mp3 player , price: 36 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 68 , name: shampoo , price: 41 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 69 , name: plush pony , price: 100 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 70 , name: notepad , price: 18 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 71 , name: floor , price: 81 , vat: 0.08 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 72 , name: rubber stamp , price: 71 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 73 , name: wrench , price: 40 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 74 , name: seat belt , price: 54 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 75 , name: water bottle , price: 35 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 76 , name: hair pin , price: 61 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 77 , name: bottle of sunscreen , price: 2 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 78 , name: house , price: 79 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 79 , name: plush cat , price: 96 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 80 , name: wine glass , price: 66 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 81 , name: microphone , price: 15 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 82 , name: pants , price: 72 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 83 , name: bananas , price: 28 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 84 , name: egg , price: 54 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 85 , name: dictionary , price: 78 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 86 , name: vase , price: 91 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 87 , name: hamster , price: 1 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 88 , name: shawl , price: 2 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 89 , name: clothes , price: 70 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 90 , name: handful of change , price: 79 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 91 , name: handheld game system , price: 11 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 92 , name: balloon , price: 73 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 93 , name: rolling pin , price: 15 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 94 , name: bottle of nail polish , price: 100 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 95 , name: bottle cap , price: 25 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 96 , name: pair of knitting needles , price: 66 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 97 , name: zebra , price: 40 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 98 , name: helmet , price: 99 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 99 , name: bookmark , price: 50 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:294: Reading Product, ID: 100 , name: lamp shade , price: 96 , vat: 0.18 
+INFO: 2022/08/05 18:04:04 rest_functions.go:302: Total of 100 products found and listed. 
+INFO: 2022/08/05 18:04:06 rest_functions.go:167: Endpoint hit : ListCustomers
+INFO: 2022/08/05 18:04:06 db_connector.go:37: Connecting to database...
+INFO: 2022/08/05 18:04:06 rest_functions.go:176: Parsing customers...
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 1 , name: Ayse Boyd , balance: 348.000000 , consecutive discount: 19 , has subsequent discount until: 2022-09-11 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 2 , name: Ioana Cote , balance: 652.000000 , consecutive discount: 3 , has subsequent discount until: 2022-10-12 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 3 , name: Garrett Benton , balance: 655.000000 , consecutive discount: 79 , has subsequent discount until: 2022-11-12 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 4 , name: Kelsi Terrell , balance: 599.000000 , consecutive discount: 5 , has subsequent discount until: 2022-09-05 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 5 , name: Saim Fuentes , balance: 155.000000 , consecutive discount: 32 , has subsequent discount until: 2022-11-05 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 6 , name: Charles Kumar , balance: 922.000000 , consecutive discount: 15 , has subsequent discount until: 2022-10-19 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 7 , name: Demi-Leigh Simon , balance: 523.000000 , consecutive discount: 57 , has subsequent discount until: 2022-09-04 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 8 , name: Leanne Hulme , balance: 536.000000 , consecutive discount: 19 , has subsequent discount until: 2022-10-17 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 9 , name: Leticia Lindsay , balance: 958.000000 , consecutive discount: 42 , has subsequent discount until: 2022-10-13 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 10 , name: Nikhil Brennan , balance: 263.000000 , consecutive discount: 92 , has subsequent discount until: 2022-09-18 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 11 , name: Ariya Schofield , balance: 813.000000 , consecutive discount: 67 , has subsequent discount until: 2022-10-30 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 12 , name: Paula Buxton , balance: 950.000000 , consecutive discount: 70 , has subsequent discount until: 2022-11-07 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 13 , name: Vinnie Hebert , balance: 254.000000 , consecutive discount: 45 , has subsequent discount until: 2022-08-22 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 14 , name: Elaina Guevara , balance: 775.000000 , consecutive discount: 73 , has subsequent discount until: 2022-08-17 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 15 , name: Pippa Grimes , balance: 219.000000 , consecutive discount: 83 , has subsequent discount until: 2022-09-20 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 16 , name: Livia Gilbert , balance: 903.000000 , consecutive discount: 60 , has subsequent discount until: 2022-08-15 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 17 , name: Zakir Weston , balance: 946.000000 , consecutive discount: 90 , has subsequent discount until: 2022-08-23 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 18 , name: Federico Sheppard , balance: 351.000000 , consecutive discount: 97 , has subsequent discount until: 2022-08-23 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 19 , name: Ayrton Dodson , balance: 768.000000 , consecutive discount: 58 , has subsequent discount until: 2022-08-18 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 20 , name: Maja Park , balance: 949.000000 , consecutive discount: 89 , has subsequent discount until: 2022-09-18 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 21 , name: Aisling Hendrix , balance: 422.000000 , consecutive discount: 7 , has subsequent discount until: 2022-09-27 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 22 , name: Halimah Bourne , balance: 141.000000 , consecutive discount: 53 , has subsequent discount until: 2022-10-31 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 23 , name: Damon Diaz , balance: 834.000000 , consecutive discount: 12 , has subsequent discount until: 2022-11-05 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 24 , name: Sarah Kelley , balance: 122.000000 , consecutive discount: 71 , has subsequent discount until: 2022-09-20 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 25 , name: Sonya Humphries , balance: 877.000000 , consecutive discount: 7 , has subsequent discount until: 2022-09-21 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 26 , name: Melisa Leigh , balance: 761.000000 , consecutive discount: 59 , has subsequent discount until: 2022-09-08 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 27 , name: Tony Bravo , balance: 391.000000 , consecutive discount: 97 , has subsequent discount until: 2022-10-25 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 28 , name: Christos Piper , balance: 170.000000 , consecutive discount: 29 , has subsequent discount until: 2022-11-09 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 29 , name: Marley Vinson , balance: 380.000000 , consecutive discount: 90 , has subsequent discount until: 2022-09-23 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 30 , name: Nour Deacon , balance: 966.000000 , consecutive discount: 25 , has subsequent discount until: 2022-09-19 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 31 , name: Zayn Fuller , balance: 841.000000 , consecutive discount: 56 , has subsequent discount until: 2022-10-21 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 32 , name: Krisha Searle , balance: 338.000000 , consecutive discount: 38 , has subsequent discount until: 2022-09-15 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 33 , name: Mohamad Underwood , balance: 825.000000 , consecutive discount: 85 , has subsequent discount until: 2022-09-25 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 34 , name: Leyton Hirst , balance: 443.000000 , consecutive discount: 44 , has subsequent discount until: 2022-10-13 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 35 , name: Sonny Mcguire , balance: 126.000000 , consecutive discount: 89 , has subsequent discount until: 2022-10-17 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 36 , name: Dominick Bryan , balance: 406.000000 , consecutive discount: 56 , has subsequent discount until: 2022-10-21 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 37 , name: Ieuan Wynn , balance: 737.000000 , consecutive discount: 5 , has subsequent discount until: 2022-08-26 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 38 , name: Talitha Baird , balance: 259.000000 , consecutive discount: 74 , has subsequent discount until: 2022-10-06 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 39 , name: Maurice Needham , balance: 587.000000 , consecutive discount: 1 , has subsequent discount until: 2022-11-07 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 40 , name: Summer Merritt , balance: 954.000000 , consecutive discount: 57 , has subsequent discount until: 2022-09-23 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 41 , name: Hugh Deleon , balance: 208.000000 , consecutive discount: 5 , has subsequent discount until: 2022-11-03 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 42 , name: Montgomery May , balance: 206.000000 , consecutive discount: 73 , has subsequent discount until: 2022-09-27 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 43 , name: Ravi Callaghan , balance: 836.000000 , consecutive discount: 55 , has subsequent discount until: 2022-09-22 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 44 , name: Sameera Olson , balance: 289.000000 , consecutive discount: 85 , has subsequent discount until: 2022-09-13 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 45 , name: Olivia Pearson , balance: 114.000000 , consecutive discount: 69 , has subsequent discount until: 2022-08-19 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 46 , name: Nakita Stokes , balance: 174.000000 , consecutive discount: 34 , has subsequent discount until: 2022-11-10 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 47 , name: Byron Philip , balance: 480.000000 , consecutive discount: 72 , has subsequent discount until: 2022-10-28 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 48 , name: Aislinn Villa , balance: 441.000000 , consecutive discount: 50 , has subsequent discount until: 2022-09-05 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 49 , name: Blair Crouch , balance: 939.000000 , consecutive discount: 52 , has subsequent discount until: 2022-09-06 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 50 , name: Patsy Couch , balance: 843.000000 , consecutive discount: 29 , has subsequent discount until: 2022-09-24 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 51 , name: Niam Goldsmith , balance: 415.000000 , consecutive discount: 26 , has subsequent discount until: 2022-11-06 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 52 , name: Hamaad Villalobos , balance: 795.000000 , consecutive discount: 59 , has subsequent discount until: 2022-10-21 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 53 , name: Veronika OQuinn , balance: 725.000000 , consecutive discount: 16 , has subsequent discount until: 2022-10-29 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 54 , name: Tahir Coulson , balance: 579.000000 , consecutive discount: 87 , has subsequent discount until: 2022-10-30 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 55 , name: Tate Henry , balance: 596.000000 , consecutive discount: 23 , has subsequent discount until: 2022-09-04 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 56 , name: Bodhi Prince , balance: 646.000000 , consecutive discount: 71 , has subsequent discount until: 2022-09-10 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 57 , name: Abdullah Ramirez , balance: 837.000000 , consecutive discount: 87 , has subsequent discount until: 2022-09-05 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 58 , name: Beatrix Justice , balance: 367.000000 , consecutive discount: 10 , has subsequent discount until: 2022-08-26 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 59 , name: Sharon Bryant , balance: 547.000000 , consecutive discount: 20 , has subsequent discount until: 2022-08-20 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 60 , name: Reiss Parkinson , balance: 439.000000 , consecutive discount: 21 , has subsequent discount until: 2022-11-06 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 61 , name: Evie-May Blankenship , balance: 775.000000 , consecutive discount: 96 , has subsequent discount until: 2022-09-21 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 62 , name: Michaela Squires , balance: 764.000000 , consecutive discount: 68 , has subsequent discount until: 2022-11-08 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 63 , name: Ptolemy Archer , balance: 477.000000 , consecutive discount: 39 , has subsequent discount until: 2022-10-26 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 64 , name: Margaux Campbell , balance: 463.000000 , consecutive discount: 58 , has subsequent discount until: 2022-10-02 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 65 , name: Corrie Roche , balance: 751.000000 , consecutive discount: 55 , has subsequent discount until: 2022-10-29 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 66 , name: Xena Freeman , balance: 208.000000 , consecutive discount: 50 , has subsequent discount until: 2022-11-07 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 67 , name: Carrie-Ann Southern , balance: 564.000000 , consecutive discount: 53 , has subsequent discount until: 2022-09-04 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 68 , name: Dawn Derrick , balance: 454.000000 , consecutive discount: 18 , has subsequent discount until: 2022-10-06 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 69 , name: Cem Simpson , balance: 529.000000 , consecutive discount: 51 , has subsequent discount until: 2022-10-16 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 70 , name: Rosanna Hopper , balance: 215.000000 , consecutive discount: 53 , has subsequent discount until: 2022-09-07 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 71 , name: Kianna Pearce , balance: 108.000000 , consecutive discount: 14 , has subsequent discount until: 2022-08-22 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 72 , name: Tyrique Clegg , balance: 947.000000 , consecutive discount: 94 , has subsequent discount until: 2022-08-24 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 73 , name: Myrtle Robin , balance: 940.000000 , consecutive discount: 27 , has subsequent discount until: 2022-10-14 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 74 , name: Noah Bernard , balance: 553.000000 , consecutive discount: 51 , has subsequent discount until: 2022-10-28 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 75 , name: Mayur Paul , balance: 524.000000 , consecutive discount: 78 , has subsequent discount until: 2022-10-01 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 76 , name: Jak Lang , balance: 397.000000 , consecutive discount: 7 , has subsequent discount until: 2022-08-21 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 77 , name: Hibah Ferry , balance: 707.000000 , consecutive discount: 1 , has subsequent discount until: 2022-09-19 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 78 , name: Kealan Moore , balance: 238.000000 , consecutive discount: 39 , has subsequent discount until: 2022-09-15 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 79 , name: Jaden Wicks , balance: 564.000000 , consecutive discount: 9 , has subsequent discount until: 2022-10-28 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 80 , name: Kurt Emery , balance: 437.000000 , consecutive discount: 67 , has subsequent discount until: 2022-09-14 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 81 , name: Luci Mcphee , balance: 891.000000 , consecutive discount: 87 , has subsequent discount until: 2022-09-15 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 82 , name: Sebastien Richardson , balance: 571.000000 , consecutive discount: 79 , has subsequent discount until: 2022-10-25 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 83 , name: Dainton Heath , balance: 997.000000 , consecutive discount: 55 , has subsequent discount until: 2022-10-26 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 84 , name: Arielle Barron , balance: 228.000000 , consecutive discount: 7 , has subsequent discount until: 2022-09-07 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 85 , name: Abbie Chamberlain , balance: 111.000000 , consecutive discount: 77 , has subsequent discount until: 2022-10-07 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 86 , name: Momina Dawe , balance: 200.000000 , consecutive discount: 47 , has subsequent discount until: 2022-09-17 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 87 , name: Aryaan Mooney , balance: 820.000000 , consecutive discount: 90 , has subsequent discount until: 2022-09-09 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 88 , name: Nuala Mcfarlane , balance: 495.000000 , consecutive discount: 76 , has subsequent discount until: 2022-09-06 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 89 , name: Aminah Knapp , balance: 750.000000 , consecutive discount: 18 , has subsequent discount until: 2022-09-18 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 90 , name: Mared Stone , balance: 265.000000 , consecutive discount: 90 , has subsequent discount until: 2022-10-04 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 91 , name: Christian Xiong , balance: 158.000000 , consecutive discount: 100 , has subsequent discount until: 2022-10-02 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 92 , name: Subhan Collins , balance: 766.000000 , consecutive discount: 31 , has subsequent discount until: 2022-08-15 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 93 , name: Gianluca Stubbs , balance: 463.000000 , consecutive discount: 77 , has subsequent discount until: 2022-09-05 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 94 , name: Deanne Burch , balance: 162.000000 , consecutive discount: 88 , has subsequent discount until: 2022-08-27 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 95 , name: Ace Choi , balance: 618.000000 , consecutive discount: 93 , has subsequent discount until: 2022-09-25 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 96 , name: Siena Blaese , balance: 155.000000 , consecutive discount: 68 , has subsequent discount until: 2022-10-09 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 97 , name: Saara Snider , balance: 109.000000 , consecutive discount: 80 , has subsequent discount until: 2022-09-02 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 98 , name: James Bullock , balance: 281.000000 , consecutive discount: 75 , has subsequent discount until: 2022-09-20 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 99 , name: Josiah Ruiz , balance: 878.000000 , consecutive discount: 75 , has subsequent discount until: 2022-11-05 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:193: Reading customer id: 100 , name: Killian Jennings , balance: 455.000000 , consecutive discount: 21 , has subsequent discount until: 2022-08-20 00:00:00 +0000 UTC 
+INFO: 2022/08/05 18:04:06 rest_functions.go:197: Total of 100 customers found and listed. 
+INFO: 2022/08/05 18:04:07 db_connector.go:37: Connecting to database...
+INFO: 2022/08/05 18:04:07 product.go:16: Function hit : GetProductName
+INFO: 2022/08/05 18:04:07 db_connector.go:37: Connecting to database...
+INFO: 2022/08/05 18:04:07 cart.go:149: Function hit : IsCartExists
+INFO: 2022/08/05 18:04:07 db_connector.go:37: Connecting to database...
+ERROR: 2022/08/05 18:04:07 rest_functions.go:144: Cart not found
+INFO: 2022/08/05 18:04:10 db_connector.go:37: Connecting to database...
+INFO: 2022/08/05 18:04:10 cart.go:149: Function hit : IsCartExists
+INFO: 2022/08/05 18:04:10 db_connector.go:37: Connecting to database...
+ERROR: 2022/08/05 18:04:10 rest_functions.go:31: Cart: 1 not found

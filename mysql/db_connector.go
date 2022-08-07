@@ -7,13 +7,15 @@ import (
 	"io/ioutil"
 	"strings"
 
+	config "final_project/config"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
-var dbDriver = "mysql"
-var dbUser = "root"
-var dbPass = "123456"
-var dbName = "app_db"
+var dbDriver = config.ConfigInstance.DbType
+var dbUser = config.ConfigInstance.DbUser
+var dbPass = config.ConfigInstance.DbPass
+var dbName = config.ConfigInstance.DbName
 
 func createSchema() {
 	db, err := sql.Open(dbDriver, dbUser+":"+dbPass+"@tcp(127.0.0.1:3306)/")
@@ -59,7 +61,9 @@ func CreateDb() {
 		if err != nil {
 			logger.AppLogger.Error().Printf("Error executing request: %v \n", err)
 		} else {
-			logger.AppLogger.Info().Printf("Request executed: %v \n", result)
+			if config.ConfigInstance.SqlLogs == "true" {
+				logger.AppLogger.Info().Printf("Request executed: %v \n", result)
+			}
 		}
 
 	}

@@ -30,6 +30,7 @@ func handleRequests() {
 	//Writing endpoints
 	myRouter.HandleFunc("/addtocart/{cart_id}/{product_id}", rest.AddToCart).Methods("POST")
 	myRouter.HandleFunc("/deletecartitem/{cart_id}/{product_id}", rest.DeleteCartItem).Methods("DELETE")
+	myRouter.HandleFunc("/completecart/{cart_id}", rest.CompleteCart).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":10000", myRouter)) //listen to 10000 port
 }
