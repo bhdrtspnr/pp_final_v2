@@ -27,6 +27,7 @@ You can test certain functions with the test.http file, it has pre generated RES
 You can also use postman (https://www.postman.com/) to test the API.
 
 Program comes with builtin unit tests as well, check unit_test.go file in the main section, you can either run all the tests at once and see the results with typing "go test -v" to terminal while in the main directory, or use VsCode IDE to run each test by clicking the button:
+
 ![image](https://user-images.githubusercontent.com/97244264/183280850-4524d711-2399-4c5c-b4ef-1659bc6e7221.png)
 
 Notes about the unit tests (about how bad it is):
