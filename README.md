@@ -45,4 +45,30 @@ create another script in the sql/ folder to generate the data, it would probably
 
 
   # Logging
-Program comes in with a built in logger. Everytime the an action is executed program will generate the necessary logs at /logs/D-MMMM-YYYY.log file depending on the current date.
+Program comes in with a built in logger. Everytime the an action is executed program will generate the necessary logs at /logs/D-MMMM-YYYY.log file depending on the current date. Logging was and is essential because without any notifications or information about what the program is doing, it's harder to debug or understand the logic working. You can pretty much understand what the program is doing when you execute a command.
+
+As an example:
+
+    POST http://localhost:10000/addtocart/1/10
+     
+    Generates the following output:
+    INFO: 2022/08/07 10:52:15 config.go:28: Function hit : GetConfig
+    INFO: 2022/08/07 10:52:15 main.go:14: Main started
+    INFO: 2022/08/07 10:52:15 db_connector.go:32: Database app_db created 
+    INFO: 2022/08/07 10:52:16 db_connector.go:37: Connecting to database...
+    FATAL: 2022/08/07 10:52:16 db_connector.go:57: Parsing requests...
+    ERROR: 2022/08/07 10:52:16 db_connector.go:62: Error executing request: Error 1065: Query was empty 
+    INFO: 2022/08/07 10:52:16 main.go:21: Handling requests...
+    INFO: 2022/08/07 10:52:21 db_connector.go:37: Connecting to database...
+    INFO: 2022/08/07 10:52:21 product.go:16: Function hit : GetProductName
+    INFO: 2022/08/07 10:52:21 db_connector.go:37: Connecting to database...
+    INFO: 2022/08/07 10:52:21 cart.go:168: Function hit : IsCartExists
+    INFO: 2022/08/07 10:52:21 db_connector.go:37: Connecting to database...
+    INFO: 2022/08/07 10:52:21 db_connector.go:37: Connecting to database...
+    INFO: 2022/08/07 10:52:21 product.go:61: Product id: 20 
+    INFO: 2022/08/07 10:52:21 rest_functions.go:258: Adding product id: 20 , product name: basketball to cart id: 1 
+    INFO: 2022/08/07 10:52:21 rest_functions.go:265: Product added to cart.
+    INFO: 2022/08/07 10:52:21 cart.go:55: Function hit : UpdateCartPrice
+    INFO: 2022/08/07 10:52:21 db_connector.go:37: Connecting to database...
+    INFO: 2022/08/07 10:52:21 cart.go:110: Cart id: 1 price updated!, OLD VAL: 0.000000 , NEW_VAL: 21.000000 
+
