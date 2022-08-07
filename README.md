@@ -1,20 +1,18 @@
 
   # Config
-{
+    {
     "given_amount": 100, //satisfies business logic 2.c and expectations 6
     "point1_vat_discount": 0, //satisfies business logic 2.a
     "point8_vat_discount": 0.1, //satisfies business logic 2.a
     "point18_vat_discount": 0.15, //satisfies business logic 2.a
     "subsequent_purchase_discount": 0.1, //satisfies business logic 2.c 
     "three_subsequent_purchase_discount": 0.08, //satisfies business logic 2.b
-  
-    //db info required for db connections
     "db_name": "app_db", 
     "db_user": "root",
     "db_password": "123456",
     "db_type": "mysql",
     "sql_logs": "false"
-}
+    }
   # MySQL and DB
 Mysql is required in local to run this project.
 Please head to https://dev.mysql.com/downloads/installer/ download the installer and install MySQL server if you haven't already.
