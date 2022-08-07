@@ -26,5 +26,22 @@ You can test certain functions with the test.http file, it has pre generated RES
 
 You can also use postman (https://www.postman.com/) to test the API.
 
+Program comes with builtin unit tests as well, check unit_test.go file in the main section, you can either run all the tests at once and see the results with typing "go test -v" to terminal while in the main directory, or use VsCode IDE to run each test by clicking the button:
+![image](https://user-images.githubusercontent.com/97244264/183280850-4524d711-2399-4c5c-b4ef-1659bc6e7221.png)
+
+Notes about the unit tests (about how bad it is):
+This is probably the worst way to do a unit test but it works.
+Program literally wipes everything from the DB and inserts necessary values in each test.
+The reason why I did this is I faced a couple of problems:
+1) If program has not run before, the tables will be empty and the test will fail.
+    Since program generates the necessary tables and inserts the data in the runtime by executing the script at sql/.
+2) If a test fails, the program will not be able to run the next test.
+3) Some tests are coupled with the others, which is creating dirty data and dependency on the previous test.
+
+
+There are also some helper functions to create the necessary test data, I was not sure If I should
+create another script in the sql/ folder to generate the data, it would probably be a better solution.
+
+
   # Logging
 Program comes in with a built in logger. Everytime the an action is executed program will generate the necessary logs at /logs/D-MMMM-YYYY.log file depending on the current date.
