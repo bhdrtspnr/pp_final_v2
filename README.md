@@ -100,6 +100,10 @@ Program will come with 100 users and 100 products predefined. When you run the m
 
 Also while creating the initial mysql server please use the credidentials stated above at Config section or change the config.json in order to connect the mysql server with the appropriate creditentials.
 
+Detailed view of the Database Model:
+![image](https://user-images.githubusercontent.com/97244264/183481147-8026fa43-203b-417b-9b5b-1581a6ee92eb.png)
+
+
   # Testing
 You can test certain functions with the test.http file, it has pre generated REST requests, I suggest you to install REST Client addon for VSCode, (https://marketplace.visualstudio.com/items?itemName=humao.rest-client), you can send requests and see their results pane by pane.
 
