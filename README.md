@@ -42,15 +42,15 @@
 
   # Files and Structure
   
-  config -> holds the configs in config/config.json
-  data_creator -> contains an excel file to create sample data for products and customers (no need to ship to the end user)
-  discount -> calculates discounts
-  logger -> maintains logging
-  logs -> stores logs with d-m-yyyy.log format
-  model -> everything related to the structures, cart, cart_items, products, customers.
-  mysql -> creating the db connections and initializing the DB
-  rest_functions -> API endpoints
-  sql -> contains a script to initilize the database.
+	  config -> holds the configs in config/config.json
+	  data_creator -> contains an excel file to create sample data for products and customers (no need to ship to the end user)
+	  discount -> calculates discounts
+	  logger -> maintains logging
+	  logs -> stores logs with d-m-yyyy.log format
+	  model -> everything related to the structures, cart, cart_items, products, customers.
+	  mysql -> creating the db connections and initializing the DB
+	  rest_functions -> API endpoints
+	  sql -> contains a script to initilize the database.
   
 
   # How to use?
