@@ -1,3 +1,82 @@
+  # What it does?
+    Through this project, A basket service developed using REST API and GO.
+  Customers are be able to purchase existing products. 
+  
+  The functions of this service are as follows;
+  1. List Products
+  - Users are be able to list all products.
+  
+  2. Add To Cart
+  - Users can add their products to the basket and the total of the basket
+  changes accordingly.
+
+  3. Show Cart
+  - Users can list the products they have added to their cart and total price and
+  VAT of the cart.
+  
+  4. Delete Cart Item
+  - Users can remove the products added from the cart. Notice removing an item
+  may change discount.
+
+  5. Complete Order
+  - Users can create an order with the products they add to their cart. 
+
+  Some business rules
+  1. Products always have price and VAT (Value Added Tax, or KDV). VAT might be
+  different for different products. Typical VAT percentage is %1, %8 and %18.
+  
+  2. There might be discount in following situations:
+    a. Every fourth order whose total is more than given amount may have discount
+    depending on products. Products whose VAT is %1 don’t have any discount
+    but products whose VAT is %8 and %18 have discount of %10 and %15
+    respectively.
+    
+    b. If there are more than 3 items of the same product, then fourth and
+    subsequent ones would have %8 off.
+
+    c. If the customer made purchase which is more than given amount in a month
+    then all subsequent purchases should have %10 off.
+    
+    d. Only one discount can be applied at a time. Only the highest discount should
+    be applied.
+
+
+  # How to use?
+ 1) Mysql is required in local to run this project.
+Please head to https://dev.mysql.com/downloads/installer/ download the installer and install MySQL server if you haven't already.
+If you don't know how to install MySQL please watch this video: https://www.youtube.com/watch?v=GIRcpjg-3Eg (it took me a few hours to figure out I had to install MySQL server in order to use MySQL locally)
+
+2)Go to the pp_final_v2/config/config.json, edit the file appropriately, you can find the explanations in the Configs sections. To run the program you need to set the db_user and db_password accordingly.
+
+3)Either build an executable with go build or execute go run . via terminal. You can test the software with either given examples in example_requests.http, you can also craft your own requests with the following parameters:
+
+  //Reading endpoints
+	myRouter.HandleFunc("/showcart/{cart_id}", rest.ShowCart).Methods("GET")
+
+	//Writing endpoints
+	/addtocart/{cart_id}/{product_id} Methods("POST")
+	/deletecartitem/{cart_id}/{product_id} Methods("DELETE")
+	/completecart/{cart_id} Methods("POST")
+
+ 4)Program will come with 100 predefined users and products you can view them after running the program once or you can view them in the /sql/create_db.sql file.
+ 
+ 5)You can also test the business logic with the predefined unit tests in the unit_test.go file. 
+ 
+ 6)You can view logs in /logs directory with a log file named $current_day
+ 
+ 7)You can change config to change the business logic (discounts).
+
+  # Discounts
+  
+  There are 3 types of discounts available:
+1)  CalculateConsecutivePurchaseDiscount -> checks if the customer made a purchase more than the given amount in the config file in the last 30 days, if did, customer receives a discount amount of Config.SubsequentPurchaseDiscount (it is modifiable).
+
+2) CalculateGivenAmountDiscount -> Checks if the customer's cart's total price is more than the config.GivenAmount (modifiable), if it is, checks if the customer had 3 other previous purchases with more than config.GivenAmount, if yes, it applies config.Point18VatDiscount to 18% VAT items, config.Point8VatDiscount to 8% VAT items and config.Point1VatDiscount to 1% VAT items. They're all modifiable since they may need to change in the future.
+  
+ 3) CalculateThreeSubsequentPurchaseDiscount-> Checks if the cart has more than 3 of the same item. Like if customer purchases 4 apples and an apple costs 10$, customer pays 3*10$ for the first 3 apples and receives a discount on the 4th apple by %config.ThreeSubsequentPurchaseDiscount (modifiable). If customer purchases 8 apples, he/she receives the discount twice for the 4th and 8th item.
+ 
+ 4) Cart only utilizes the highest amount of the discounts avaiable.
+  
 
   # Config
     {
@@ -11,7 +90,7 @@
     "db_user": "root",
     "db_password": "123456",
     "db_type": "mysql",
-    "sql_logs": "false"
+    "sql_logs": "false" //some sql statements create a lot of unnecessary logs, you can turn them back on by changing this to true
     }
   # MySQL and DB
 Mysql is required in local to run this project.
