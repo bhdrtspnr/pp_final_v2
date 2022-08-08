@@ -11,7 +11,9 @@ import (
 )
 
 func main() {
+
 	logger.AppLogger.Info().Println("Main started")
+	//create necessary tables and relations by executing the /sql/create.sql file
 	sql.CreateDb()
 	handleRequests()
 }

@@ -5,6 +5,7 @@ import (
 	connector "final_project/mysql"
 )
 
+//create product struct for products table
 type Product struct {
 	Id    int     `json:"id"`
 	Name  string  `json:"name"`
@@ -12,9 +13,11 @@ type Product struct {
 	Vat   float64 `json:"vat"`
 }
 
-func GetProductName(id string) string {
+func GetProductNameByID(id string) string {
+
 	logger.AppLogger.Info().Println("Function hit : GetProductName")
 	db := connector.DbConn()
+	//query the database for the product name by id
 	selDB, err := db.Query("SELECT name FROM products WHERE id = ?", id)
 	if err != nil {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
@@ -28,12 +31,14 @@ func GetProductName(id string) string {
 			panic(err.Error())
 		}
 	}
-	return name
+	return name //return the product name
 }
 
 func GetProductById(id string) Product {
+
 	logger.AppLogger.Info().Println("Function hit : GetProduct")
 	db := connector.DbConn()
+	//query the database for the product by id
 	selDB, err := db.Query("SELECT * FROM products WHERE id = ?", id)
 	if err != nil {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
@@ -47,11 +52,12 @@ func GetProductById(id string) Product {
 			panic(err.Error())
 		}
 	}
-	return product
+	return product //return the product
 }
 
 func IsProductExists(id string) bool {
 	db := connector.DbConn()
+	//query the database for the product by id
 	selDB, err := db.Query("SELECT * FROM products WHERE id = ?", id)
 	if err != nil {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
@@ -59,7 +65,7 @@ func IsProductExists(id string) bool {
 	}
 	if selDB.Next() {
 		logger.AppLogger.Info().Printf("Product id: %s \n", id)
-		return true
+		return true //return true if product exists
 	}
-	return false
+	return false //return false if product does not exist
 }

@@ -9,6 +9,8 @@ import (
 
 var AppLogger = newLogger()
 
+//create a new logger object
+
 const (
 	LogsDirpath = "logs" //create path for logs
 )
@@ -27,6 +29,7 @@ func newLogger() *LogDir {
 	}
 }
 
+//create a new log file for each day
 func SetLogFile() *os.File {
 	year, month, day := time.Now().Date()
 	fileName := fmt.Sprintf("%v-%v-%v.log", day, month.String(), year)                              //get cur date and create a new file with it
@@ -34,6 +37,8 @@ func SetLogFile() *os.File {
 
 	return filePath
 }
+
+//setup different levels of logs, info, warning, error, fatal they're all the same except the message
 
 func (l *LogDir) Info() *log.Logger {
 	getFilePath := SetLogFile()
