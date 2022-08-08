@@ -69,9 +69,9 @@ If you don't know how to install MySQL please watch this video: https://www.yout
   # Discounts
   
   There are 3 types of discounts available:
-1)  CalculateConsecutivePurchaseDiscount -> checks if the customer made a purchase more than the given amount in the config file in the last 30 days, if did, customer receives a discount amount of Config.SubsequentPurchaseDiscount (it is modifiable).
+1)  CalculateConsecutivePurchaseDiscount -> checks if the customer made a purchase more than the given amount in the config file in the last 30 days, if did, customer receives a discount amount of Config.SubsequentPurchaseDiscount (it is modifiable). (It can be done by setting the customer's HAS_SUBSEQUENT_DISCOUNT_UNTIL attribute to current date + 30 days, whenever he makes a purchase greater than the given amount, if current date is greater than the attribute, do not apply discount, if not apply discount.)
 
-2) CalculateGivenAmountDiscount -> Checks if the customer's cart's total price is more than the config.GivenAmount (modifiable), if it is, checks if the customer had 3 other previous purchases with more than config.GivenAmount, if yes, it applies config.Point18VatDiscount to 18% VAT items, config.Point8VatDiscount to 8% VAT items and config.Point1VatDiscount to 1% VAT items. They're all modifiable since they may need to change in the future.
+2) CalculateGivenAmountDiscount -> Checks if the customer's cart's total price is more than the config.GivenAmount (modifiable), if it is, checks if the customer had 3 other previous purchases with more than config.GivenAmount (we do this by incrementing the customer's CONSECUTIVE_DISCOUNT attribute by 1 each time he makes a purchase which has a greater cart value than given amount), if yes, it applies config.Point18VatDiscount to 18% VAT items, config.Point8VatDiscount to 8% VAT items and config.Point1VatDiscount to 1% VAT items. They're all modifiable since they may need to change in the future.
   
  3) CalculateThreeSubsequentPurchaseDiscount-> Checks if the cart has more than 3 of the same item. Like if customer purchases 4 apples and an apple costs 10$, customer pays 3*10$ for the first 3 apples and receives a discount on the 4th apple by %config.ThreeSubsequentPurchaseDiscount (modifiable). If customer purchases 8 apples, he/she receives the discount twice for the 4th and 8th item.
  
