@@ -218,7 +218,8 @@ func ShowCart(w http.ResponseWriter, r *http.Request) {
 		cart.Discount = Discount
 		logger.AppLogger.Info().Printf("Reading cart id: %d , customer id: %d , is purchased: %v , date purchased: %v , total price: %f \n", cart.Id, cart.CustomerId, cart.IsPurchased, cart.DatePurchased, cart.TotalPrice)
 	}
-	json.NewEncoder(w).Encode(cart) //encode the cart data to json
+	//json.NewEncoder(w).Encode(cart) //encode the cart data to json
+	w.Write([]byte("Cart id: " + cartId + " found.\n"))
 
 	//get the cart items from the cart
 	selDB, err := db.Query("SELECT * FROM cart_items WHERE cart_id = ?", cartId)
@@ -248,8 +249,8 @@ func ShowCart(w http.ResponseWriter, r *http.Request) {
 		cartItems = append(cartItems, cartItem) //append the cart item to the cart item slice
 		logger.AppLogger.Info().Printf("Reading cart item id: %d , cart id: %d , product id: %d , product name: %s \n", cartItem.Id, cartItem.CartId, cartItem.ProductId, cartItem.ProductName)
 	}
-	json.NewEncoder(w).Encode(cartItems) //encode the cart item slice to json
 
+	json.NewEncoder(w).Encode(cartItems) //encode the cart items to json
 	logger.AppLogger.Info().Printf("Total of %v cart items found and listed. \n", len(cartItems))
 	defer db.Close()
 }
@@ -287,7 +288,7 @@ func AddToCart(w http.ResponseWriter, r *http.Request) {
 		panic(err.Error())
 	}
 	insForm.Exec(cartId, productId, productName)
-	w.Write([]byte("Product "+ productName +" added to cart "+ cartId+ " successfully")))) 
+	w.Write([]byte("Product " + productName + " added to cart " + cartId + " successfully"))
 	logger.AppLogger.Info().Printf("Product id: %s , product name: %s added to cart id: %s \n", productId, productName, cartId)
 	model.UpdateCartPrice(cartId) //update the cart price
 	defer db.Close()
@@ -303,7 +304,7 @@ func ListCustomers(w http.ResponseWriter, r *http.Request) {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
 		panic(err.Error())
 	}
-	customer := model.Customer{}   //create a customer struct
+	customer := model.Customer{}    //create a customer struct
 	customers := []model.Customer{} //create a customer slice
 	logger.AppLogger.Info().Println("Parsing customers...")
 	for selDB.Next() { //loop through the customers
@@ -326,7 +327,7 @@ func ListCustomers(w http.ResponseWriter, r *http.Request) {
 		logger.AppLogger.Info().Printf("Reading customer id: %d , name: %s , balance: %f , consecutive discount: %d , has subsequent discount until: %v \n", customer.Id, customer.Name, customer.Balance, customer.Consecutive_discount, customer.Has_subsequent_discount_until)
 		customers = append(customers, customer) //append the customer to the customer slice
 	}
-	json.NewEncoder(w).Encode(customers) //encode the customer slice to json
+	json.NewEncoder(w).Encode(customers)                                                         //encode the customer slice to json
 	logger.AppLogger.Info().Printf("Total of %v customers found and listed. \n", len(customers)) //print the total of customers found
 	defer db.Close()
 }
@@ -339,8 +340,8 @@ func ListCartItems(w http.ResponseWriter, r *http.Request) {
 	selDB, err := db.Query("SELECT * FROM cart_items")
 	if err != nil {
 		logger.AppLogger.Error().Println(err.Error())
-	} 
-	cartItem := model.CartItem{}  //create a cart item struct
+	}
+	cartItem := model.CartItem{}    //create a cart item struct
 	cartItems := []model.CartItem{} //create a cart item slice
 	logger.AppLogger.Info().Println("Parsing cart items...")
 	for selDB.Next() {
@@ -376,7 +377,7 @@ func ListCarts(w http.ResponseWriter, r *http.Request) {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
 		panic(err.Error())
 	}
-	cart := model.Cart{} //create a cart struct
+	cart := model.Cart{}    //create a cart struct
 	carts := []model.Cart{} //create a cart slice
 	logger.AppLogger.Info().Println("Parsing carts...")
 	for selDB.Next() {
@@ -387,7 +388,7 @@ func ListCarts(w http.ResponseWriter, r *http.Request) {
 		var total_price float64
 		var discount float64
 
-		err = selDB.Scan(&id, &customer_id, &is_purchased, &date_purchased, &total_price, &discount) 	//scan the cart data
+		err = selDB.Scan(&id, &customer_id, &is_purchased, &date_purchased, &total_price, &discount) //scan the cart data
 		if err != nil {
 			logger.AppLogger.Fatal().Printf("Error scanning database: %v \n", err)
 			panic(err.Error())
@@ -401,7 +402,7 @@ func ListCarts(w http.ResponseWriter, r *http.Request) {
 		carts = append(carts, cart) //append the cart to the cart slice
 		logger.AppLogger.Info().Printf("Reading cart id: %d , customer id: %d , is purchased: %t , date purchased: %v , total price: %f , discount: %f \n", cart.Id, cart.CustomerId, cart.IsPurchased, cart.DatePurchased, cart.TotalPrice, cart.Discount)
 	}
-	json.NewEncoder(w).Encode(carts) //encode the cart slice to json
+	json.NewEncoder(w).Encode(carts)                                                     //encode the cart slice to json
 	logger.AppLogger.Info().Printf("Total of %v carts found and listed. \n", len(carts)) //print the total of carts found
 	defer db.Close()
 
@@ -417,7 +418,7 @@ func ListProducts(w http.ResponseWriter, r *http.Request) {
 		logger.AppLogger.Fatal().Printf("Error querying database: %v \n", err)
 		panic(err.Error())
 	}
-	product := model.Product{} //create a product struct
+	product := model.Product{}    //create a product struct
 	products := []model.Product{} //create a product slice
 	logger.AppLogger.Info().Println("Parsing products...")
 	for selDB.Next() {
